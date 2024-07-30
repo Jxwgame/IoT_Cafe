@@ -10,12 +10,12 @@ export interface Book {
 }
 export interface Menu {
   id: number;
-  title: string;
+  title: string; // 
   price: number;
 }
 export interface Order {
   id: number;
-  name: string;
+  name: string; // 
   price: number;
   detail: string;
   count: number;
