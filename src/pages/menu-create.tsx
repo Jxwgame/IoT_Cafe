@@ -98,6 +98,12 @@ export default function MenuCreatePage() {
               {...menuCreateForm.getInputProps("price")}
             />
 
+            <TextInput
+              label="URL_Image"
+              placeholder="url_image"
+              {...menuCreateForm.getInputProps("image")}
+            />
+
             <Divider />
 
             <Button type="submit" loading={isProcessing}>
