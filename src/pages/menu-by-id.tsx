@@ -1,7 +1,7 @@
 import { Alert, Button, Container, Divider, TextInput } from "@mantine/core";
 import Layout from "../components/layout";
 import { Link, useParams } from "react-router-dom";
-import { Menu } from "../lib/modelsCafe";
+import { Menu } from "../lib/models";
 import useSWR from "swr";
 import Loading from "../components/loading";
 import { IconAlertTriangleFilled, IconPackage } from "@tabler/icons-react";
