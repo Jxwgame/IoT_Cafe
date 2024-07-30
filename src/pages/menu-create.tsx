@@ -99,6 +99,12 @@ export default function MenuCreatePage() {
             />
 
             <TextInput
+              label="หมายเหตุ"
+              placeholder="หวานน้อย"
+              {...menuCreateForm.getInputProps("note")}
+            />
+
+            <TextInput
               label="URL_Image"
               placeholder="url_image"
               {...menuCreateForm.getInputProps("image")}
