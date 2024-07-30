@@ -3,7 +3,7 @@ export interface Book {
   title: string;
   author: string;
   year: number;
-  detail: string;
+  description: string;
   abbre_title: string;
   category: string[];
   is_published: boolean;

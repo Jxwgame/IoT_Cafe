@@ -24,7 +24,7 @@ export default function BookCreatePage() {
       title: "",
       author: "",
       year: 2024,
-      detail: "",
+      description: "",
       abbre_title: "",
       category: [] as string[],
       is_published: false,
@@ -34,7 +34,7 @@ export default function BookCreatePage() {
       title: isNotEmpty("กรุณาระบุชื่อหนังสือ"),
       author: isNotEmpty("กรุณาระบุชื่อผู้แต่ง"),
       year: isNotEmpty("กรุณาระบุปีที่พิมพ์หนังสือ"),
-      detail: isNotEmpty("กรุณาระบุรายละเอียด"),
+      description: isNotEmpty("กรุณาระบุรายละเอียด"),
       abbre_title: isNotEmpty("กรุณาระบุเรื่องย่อ"),
       category: isNotEmpty("กรุณาระบุประเภทหนังสือ"),
     },
@@ -119,7 +119,7 @@ export default function BookCreatePage() {
             <TextInput
               label="รายละเอียดหนังสือ"
               placeholder="รายละเอียด"
-              {...bookCreateForm.getInputProps("detail")}
+              {...bookCreateForm.getInputProps("description")}
             />
             {/* TODO: เพิ่มเรื่องย่อ */}
             <TextInput

@@ -41,7 +41,7 @@ export default function BookByIdPage() {
                   <h3>รายละเอียดหนังสือ</h3>
                   <p className="indent-4">
                     {/* TODO: เพิ่มรายละเอียดหนังสือ */}
-                    {book.detail}
+                    {book.description}
                   </p>
 
                   <h3>เรื่องย่อ</h3>

@@ -33,7 +33,7 @@ export default function BookEditById() {
       title: "",
       author: "",
       year: 2024,
-      detail: "",
+      description: "",
       abbre_title: "",
       category: [] as string[],
       is_published: false,
@@ -43,7 +43,7 @@ export default function BookEditById() {
       title: isNotEmpty("กรุณาระบุชื่อหนังสือ"),
       author: isNotEmpty("กรุณาระบุชื่อผู้แต่ง"),
       year: isNotEmpty("กรุณาระบุปีที่พิมพ์หนังสือ"),
-      detail: isNotEmpty("กรุณาระบุรายละเอียด"),
+      description: isNotEmpty("กรุณาระบุรายละเอียด"),
       abbre_title: isNotEmpty("กรุณาระบุเรื่องย่อ"),
       category: isNotEmpty("กรุณาระบุประเภทหนังสือ"),
     },
@@ -203,7 +203,7 @@ export default function BookEditById() {
                 <TextInput
                   label="รายละเอียด"
                   placeholder="รายละเอียด"
-                  {...bookEditForm.getInputProps("detail")}
+                  {...bookEditForm.getInputProps("description")}
                 />
                 {/* TODO: เพิ่มเรื่องย่อ */}
                 <TextInput
