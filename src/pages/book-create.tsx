@@ -18,8 +18,6 @@ export default function BookCreatePage() {
   const navigate = useNavigate();
 
   const [isProcessing, setIsProcessing] = useState(false);
-  const [catagories, setCatagories] = useState<string[]>([]);
-  const [newCatagories, setNewCategory] = useState<string>("");
 
   const bookCreateForm = useForm({
     initialValues: {
@@ -134,7 +132,6 @@ export default function BookCreatePage() {
               <TextInput
                 label="เพิ่มหมวดหมู่"
                 placeholder=""
-                value={newCatagories}
                 // onChange={(event) => setNewCategory(event.currentTarget.value)}
                 {...bookCreateForm.getInputProps("category")}
               />

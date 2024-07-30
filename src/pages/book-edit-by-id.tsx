@@ -28,9 +28,6 @@ export default function BookEditById() {
   const { data: book, isLoading, error } = useSWR<Book>(`/books/${bookId}`);
   const [isSetInitialValues, setIsSetInitialValues] = useState(false);
 
-  const [catagories, setCatagories] = useState<string[]>([]);
-  const [newCatagories, setNewCategory] = useState<string>("");
-
   const bookEditForm = useForm({
     initialValues: {
       title: "",
