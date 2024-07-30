@@ -7,6 +7,7 @@ import {
   Divider,
   NumberInput,
   TextInput,
+  Textarea,
 } from "@mantine/core";
 import { isNotEmpty, useForm } from "@mantine/form";
 import { useState } from "react";
@@ -116,7 +117,7 @@ export default function BookCreatePage() {
             />
 
             {/* TODO: เพิ่มรายละเอียดหนังสือ */}
-            <TextInput
+            <Textarea
               label="รายละเอียดหนังสือ"
               placeholder="รายละเอียด"
               {...bookCreateForm.getInputProps("description")}
@@ -130,8 +131,8 @@ export default function BookCreatePage() {
             {/* TODO: เพิ่มหมวดหมู่(s) */}
             <div>
               <TextInput
-                label="เพิ่มหมวดหมู่"
-                placeholder=""
+                label="หมวดหมู่"
+                placeholder="หมวดหมู่หนังสือ"
                 // onChange={(event) => setNewCategory(event.currentTarget.value)}
                 {...bookCreateForm.getInputProps("category")}
               />
