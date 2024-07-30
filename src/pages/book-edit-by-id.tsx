@@ -52,22 +52,22 @@ export default function BookEditById() {
     },
   });
 
-  const handleAddCategory = () => {
-    if (newCatagories && !catagories.includes(newCatagories)) {
-      const addCate = { ...catagories, newCatagories };
-      setCatagories(addCate);
-      bookEditForm.setFieldValue("category", addCate);
-      setNewCategory("");
-    }
-  };
+  // const handleAddCategory = () => {
+  //   if (newCatagories && !catagories.includes(newCatagories)) {
+  //     const addCate = { ...catagories, newCatagories };
+  //     setCatagories(addCate);
+  //     bookEditForm.setFieldValue("category", addCate);
+  //     setNewCategory("");
+  //   }
+  // };
 
-  const handleRemoveCategory = (categoryToRemove: string) => {
-    const updatedCategories = catagories.filter(
-      (category) => category !== categoryToRemove
-    );
-    setCatagories(updatedCategories);
-    bookEditForm.setFieldValue("category", updatedCategories);
-  };
+  // const handleRemoveCategory = (categoryToRemove: string) => {
+  //   const updatedCategories = catagories.filter(
+  //     (category) => category !== categoryToRemove
+  //   );
+  //   setCatagories(updatedCategories);
+  //   bookEditForm.setFieldValue("category", updatedCategories);
+  // };
 
   const handleSubmit = async (values: typeof bookEditForm.values) => {
     try {
@@ -216,26 +216,27 @@ export default function BookEditById() {
                 />
                 {/* TODO: เพิ่มหมวดหมู่(s) */}
                 <div>
-                  {catagories.map((category, index) => (
+                  {/* {catagories.map((category, index) => (
                     <Button
-                      key={index}
-                      color="teal"
-                      onClick={() => handleRemoveCategory(category)}
+                    key={index}
+                    color="teal"
+                    onClick={() => handleRemoveCategory(category)}
                     >
-                      #{category}
+                    #{category}
                     </Button>
-                  ))}
+                    ))} */}
                 </div>
 
                 <TextInput
                   label="เพิ่มหมวดหมู่"
                   placeholder=""
-                  value={newCatagories}
-                  onChange={(event) =>
-                    setNewCategory(event.currentTarget.value)
-                  }
+                  {...bookEditForm.getInputProps("category")}
+                  // value={newCatagories}
+                  // onChange={(event) =>
+                  //   setNewCategory(event.currentTarget.value)
+                  // }
                 />
-                <Button onClick={handleAddCategory}>เพิ่มหมวดหมู่</Button>
+                {/* <Button onClick={handleAddCategory}>เพิ่มหมวดหมู่</Button> */}
 
                 <Checkbox
                   label="เผยแพร่"

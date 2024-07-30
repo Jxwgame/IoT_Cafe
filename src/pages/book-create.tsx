@@ -28,7 +28,7 @@ export default function BookCreatePage() {
       year: 2024,
       detail: "",
       abbre_title: "",
-      type: [] as string[],
+      category: [] as string[],
       is_published: false,
     },
 
@@ -38,16 +38,16 @@ export default function BookCreatePage() {
       year: isNotEmpty("กรุณาระบุปีที่พิมพ์หนังสือ"),
       detail: isNotEmpty("กรุณาระบุรายละเอียด"),
       abbre_title: isNotEmpty("กรุณาระบุเรื่องย่อ"),
-      type: isNotEmpty("กรุณาระบุประเภทหนังสือ"),
+      category: isNotEmpty("กรุณาระบุประเภทหนังสือ"),
     },
   });
 
-  const handleAddCategory = () => {
-    const updatedCat = [...catagories, newCatagories];
-    setCatagories(updatedCat);
-    bookCreateForm.setFieldValue("type", updatedCat);
-    setNewCategory("");
-  };
+  // const handleAddCategory = () => {
+  //   const updatedCat = [...catagories, newCatagories];
+  //   setCatagories(updatedCat);
+  //   bookCreateForm.setFieldValue("category", updatedCat);
+  //   setNewCategory("");
+  // };
 
   const handleSubmit = async (values: typeof bookCreateForm.values) => {
     try {
@@ -135,11 +135,12 @@ export default function BookCreatePage() {
                 label="เพิ่มหมวดหมู่"
                 placeholder=""
                 value={newCatagories}
-                onChange={(event) => setNewCategory(event.currentTarget.value)}
+                // onChange={(event) => setNewCategory(event.currentTarget.value)}
+                {...bookCreateForm.getInputProps("category")}
               />
-              <Button onClick={handleAddCategory} className="flex justify-end">
+              {/* <Button onClick={handleAddCategory} className="flex justify-end">
                 เพิ่มหมวดหมู่
-              </Button>
+              </Button> */}
             </div>
 
             <Checkbox
