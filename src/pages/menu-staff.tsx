@@ -1,7 +1,7 @@
 import Layout from "../components/layout";
 import cafeBackgroundImage from "../assets/images/bg-cafe-3.jpg";
 import useSWR from "swr";
-import { Menu } from "../lib/modelsCafe";
+import { Menu } from "../lib/models";
 import Loading from "../components/loading";
 import { Alert } from "@mantine/core";
 import { IconAlertTriangleFilled } from "@tabler/icons-react";
