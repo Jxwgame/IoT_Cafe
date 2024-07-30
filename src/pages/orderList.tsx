@@ -7,7 +7,7 @@ import { Alert } from "@mantine/core";
 import { IconAlertTriangleFilled } from "@tabler/icons-react";
 // import { Link } from "react-router-dom";
 
-export default function menuPage() {
+export default function orderPage() {
   const { data: order, error } = useSWR<Order[]>("/order");
 
   return (
