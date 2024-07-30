@@ -15,8 +15,7 @@ import BookEditById from "./pages/book-edit-by-id";
 import { ModalsProvider } from "@mantine/modals";
 import BookCreatePage from "./pages/book-create";
 import MenuPage from "./pages/menu";
-import MenuOrder from "./pages/menu-by-id"
-import StaffPage from "./pages/menu-staff"
+import MenuCreatePage from "./pages/menu-create";
 
 const theme = createTheme({
   primaryColor: "orange",
@@ -34,20 +33,16 @@ const router = createBrowserRouter([
   },
   {
     path: "/menu",
-    element: <MenuPage/>,
-  },
-  {
-    path: "/menu-by-id",
-    element: <MenuOrder/>,
-  },
-  {
-    path: "/menu-staff",
-    element: <StaffPage/>,
+    element: <MenuPage />,
   },
   {
     path: "/books/create",
     element: <BookCreatePage />,
-  },  
+  },
+  {
+    path: "/menu/create",
+    element: <MenuCreatePage />,
+  },
   {
     path: "/books/:bookId",
     element: <BookByIdPage />,
@@ -69,7 +64,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         fetcher: (url: string) =>
           axios
             .get(url, {
-              baseURL: import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api/v1",
+              baseURL:
+                import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api/v1",
             })
             .then((res) => res.data),
       }}

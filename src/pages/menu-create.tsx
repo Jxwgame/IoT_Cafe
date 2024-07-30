@@ -20,13 +20,13 @@ export default function MenuCreatePage() {
 
   const menuCreateForm = useForm({
     initialValues: {
-      c_title: "",
-      c_price: "",
+      title: "",
+      price: 0,
     },
 
     validate: {
-      c_title: isNotEmpty("กรุณาระบุชื่อเมนู"),
-      c_price: isNotEmpty("กรุณาระบุราคาของเมนู"),
+      title: isNotEmpty("กรุณาระบุชื่อเมนู"),
+      price: isNotEmpty("กรุณาระบุราคาของเมนู"),
     },
   });
 
@@ -46,7 +46,7 @@ export default function MenuCreatePage() {
         message: "ข้อมูลเมนูได้รับการเพิ่มเรียบร้อยแล้ว",
         color: "teal",
       });
-      navigate(`/menu/${response.data.c_id}`);
+      navigate(`/menu/${response.data.id}`);
     } catch (error) {
       if (error instanceof AxiosError) {
         if (error.response?.status === 422) {
@@ -88,20 +88,20 @@ export default function MenuCreatePage() {
             <TextInput
               label="ชื่อเมนู"
               placeholder="ชื่อเมนู"
-              {...menuCreateForm.getInputProps("c_title")}
+              {...menuCreateForm.getInputProps("title")}
             />
 
             <NumberInput
               label="ราคาของเมนู"
               placeholder="ราคา"
-              min={0}
-              {...menuCreateForm.getInputProps("c_price")}
+              min={1}
+              {...menuCreateForm.getInputProps("price")}
             />
 
             <Divider />
 
             <Button type="submit" loading={isProcessing}>
-              เพิ่มเมนู
+              เพิ่มรายการ
             </Button>
           </form>
         </Container>

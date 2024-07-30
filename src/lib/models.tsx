@@ -9,9 +9,9 @@ export interface Book {
   is_published: boolean;
 }
 export interface Menu {
-  c_id: number;
-  c_title: string;
-  c_price: number;
+  id: number;
+  title: string;
+  price: number;
 }
 export interface Order {
   id: number;
