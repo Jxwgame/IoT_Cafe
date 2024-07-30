@@ -38,7 +38,7 @@ export default function BookEditById() {
       year: 2024,
       detail: "",
       abbre_title: "",
-      type: [] as string[],
+      category: [] as string[],
       is_published: false,
     },
 
@@ -48,7 +48,7 @@ export default function BookEditById() {
       year: isNotEmpty("กรุณาระบุปีที่พิมพ์หนังสือ"),
       detail: isNotEmpty("กรุณาระบุรายละเอียด"),
       abbre_title: isNotEmpty("กรุณาระบุเรื่องย่อ"),
-      type: isNotEmpty("กรุณาระบุประเภทหนังสือ"),
+      category: isNotEmpty("กรุณาระบุประเภทหนังสือ"),
     },
   });
 
@@ -56,7 +56,7 @@ export default function BookEditById() {
     if (newCatagories && !catagories.includes(newCatagories)) {
       const addCate = { ...catagories, newCatagories };
       setCatagories(addCate);
-      bookEditForm.setFieldValue("type", addCate);
+      bookEditForm.setFieldValue("category", addCate);
       setNewCategory("");
     }
   };
@@ -66,7 +66,7 @@ export default function BookEditById() {
       (category) => category !== categoryToRemove
     );
     setCatagories(updatedCategories);
-    bookEditForm.setFieldValue("type", updatedCategories);
+    bookEditForm.setFieldValue("category", updatedCategories);
   };
 
   const handleSubmit = async (values: typeof bookEditForm.values) => {

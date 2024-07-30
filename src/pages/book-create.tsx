@@ -137,7 +137,9 @@ export default function BookCreatePage() {
                 value={newCatagories}
                 onChange={(event) => setNewCategory(event.currentTarget.value)}
               />
-              <Button onClick={handleAddCategory}>เพิ่มหมวดหมู่</Button>
+              <Button onClick={handleAddCategory} className="flex justify-end">
+                เพิ่มหมวดหมู่
+              </Button>
             </div>
 
             <Checkbox
