@@ -8,12 +8,12 @@ export interface Book {
   category: string[];
   is_published: boolean;
 }
-export interface Coffee {
+export interface Menu {
   c_id: number;
   c_title: string;
   c_price: number;
 }
-export interface Menu {
+export interface Order {
   id: number;
   name: string;
   price: number;
