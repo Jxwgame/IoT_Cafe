@@ -141,6 +141,12 @@ export default function BookCreatePage() {
               </Button> */}
             </div>
 
+            <TextInput
+              label="ปกหนังสือ"
+              placeholder="URL_Image_Address"
+              {...bookCreateForm.getInputProps("url_image")}
+            />
+
             <Checkbox
               label="เผยแพร่"
               {...bookCreateForm.getInputProps("is_published", {

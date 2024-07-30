@@ -235,6 +235,12 @@ export default function BookEditById() {
                 />
                 {/* <Button onClick={handleAddCategory}>เพิ่มหมวดหมู่</Button> */}
 
+                <TextInput
+                  label="ปกหนังสือ"
+                  placeholder="URL_Image_Address"
+                  {...bookEditForm.getInputProps("url_image")}
+                />
+
                 <Checkbox
                   label="เผยแพร่"
                   {...bookEditForm.getInputProps("is_published", {
