@@ -57,7 +57,7 @@ export default function MenuByIdPage() {
         message: "สั่งซื้อเรียบร้อยแล้ว",
         color: "teal",
       });
-      navigate(`/menu`);
+      navigate(`/orders/${response.data.id}`);
     } catch (error) {
       if (error instanceof AxiosError) {
         if (error.response?.status === 422) {
@@ -82,6 +82,7 @@ export default function MenuByIdPage() {
         });
       }
     } finally {
+      navigate(`/menu`);
       setIsProcessing(false);
     }
   };
