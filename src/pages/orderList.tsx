@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import cafeBackgroundImage from "../assets/images/wallpaper.jpg";
+import cafeBackgroundImage from "../assets/images/bg-cafe-3.jpg";
 import useSWR from "swr";
 import { Order, Menu } from "../lib/models";
 import Loading from "../components/loading";
@@ -42,9 +42,9 @@ export default function OrderPage() {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="table w-full table-zebra">
+            <table className="table w-full">
               <thead>
-                <tr className="text-center">
+                <tr className="text-center text-black font-bold text-md">
                   <th>Order ID</th>
                   <th>Menu</th>
                   <th>Count</th>
