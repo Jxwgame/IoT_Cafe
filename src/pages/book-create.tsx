@@ -95,7 +95,7 @@ export default function BookCreatePage() {
 
           <form
             onSubmit={bookCreateForm.onSubmit(handleSubmit)}
-            className="space-y-8 mb-6"
+            className="space-y-8"
           >
             <TextInput
               label="ชื่อหนังสือ"
@@ -121,7 +121,7 @@ export default function BookCreatePage() {
             <Textarea
               label="รายละเอียดหนังสือ"
               placeholder="รายละเอียด"
-              className="h-24"
+              className="h-48"
               {...bookCreateForm.getInputProps("description")}
             />
             {/* TODO: เพิ่มเรื่องย่อ */}
@@ -158,7 +158,7 @@ export default function BookCreatePage() {
 
             <Divider />
 
-            <Button type="submit" loading={isProcessing}>
+            <Button className="mb-6" type="submit" loading={isProcessing}>
               บันทึกข้อมูล
             </Button>
           </form>
