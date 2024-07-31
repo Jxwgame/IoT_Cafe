@@ -29,7 +29,7 @@ export default function OrderPage() {
         <section
           className="h-[500px] w-full text-white bg-black-500 bg-cover bg-blend-multiply flex flex-col justify-center items-center px-4 text-center"
           style={{
-            backgroundImage: `url(${cafeBackgroundImage})`,
+            backgroundImage: `url(https://us.images.westend61.de/0000937603pw/cashier-using-cash-register-in-cafe-CUF04359.jpg)`,
           }}
         >
           <h1 className="text-5xl mb-2">24/7 café</h1>
