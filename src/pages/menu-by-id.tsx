@@ -111,7 +111,7 @@ export default function MenuByIdPage() {
                 <img
                   src={menu.image_url}
                   alt={menu.title}
-                  className="w-full object-cover aspect-[16/9]"
+                  className="w-full object-cover aspect-[3/4]"
                 />
                 <div className="col-span-2 px-4 space-y-2 py-4">
                   <h1>{menu.title}</h1>

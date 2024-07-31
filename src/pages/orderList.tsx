@@ -27,7 +27,7 @@ export default function OrderPage() {
     <>
       <Layout>
         <section
-          className="h-[500px] w-full text-white bg-black opacity-50 bg-cover bg-blend-multiply flex flex-col justify-center items-center px-4 text-center"
+          className="h-[500px] w-full text-white bg-black-500 bg-cover bg-blend-multiply flex flex-col justify-center items-center px-4 text-center"
           style={{
             backgroundImage: `url(${cafeBackgroundImage})`,
           }}
