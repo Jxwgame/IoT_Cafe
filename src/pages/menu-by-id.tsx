@@ -103,7 +103,7 @@ export default function MenuByIdPage() {
                 <img
                   src={menu.image_url}
                   alt={menu.title}
-                  className="w-full object-cover aspect-[3/4]"
+                  className="w-full object-cover aspect-[4/3]"
                 />
                 <div className="col-span-2 px-4 space-y-2 py-4">
                   <h1>{menu.title}</h1>
@@ -120,17 +120,6 @@ export default function MenuByIdPage() {
               </div>
 
               <Divider className="mt-4" />
-
-              <Button
-                color="grey"
-                size="xs"
-                component={Link}
-                to={`/menu/${menu.id}/edit`}
-                className="mt-4"
-                leftSection={<IconEdit />}
-              >
-                แก้ไขข้อมูลหนังสือ
-              </Button>
 
               <Button
                 color="orange"
@@ -153,7 +142,7 @@ export default function MenuByIdPage() {
               </Button>
 
               <dialog id="my_modal_4" className="modal">
-                <div className="modal-box w-11/12 max-w-5xl flex flex-col items-center justify-center">
+                <div className="modal-box w-11/12 max-w-xl flex flex-col items-center justify-center">
                   <h3 className="font-bold text-lg mb-4">แบบฟอร์มสั่งซื้อ</h3>
                   <form
                     onSubmit={orderCreateForm.onSubmit(handleSubmit)}
