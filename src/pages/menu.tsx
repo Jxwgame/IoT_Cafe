@@ -14,12 +14,12 @@ export default function menuPage() {
     <>
       <Layout>
         <section
-          className="h-[800px] w-full text-white bg-cover opacity-50 bg-blend-multiply flex flex-col justify-center items-center px-4 text-center"
+          className="h-[800px] w-full text-white bg-cover bg-zinc-500 bg-blend-multiply flex flex-col justify-center items-center px-4 text-center"
           style={{
             backgroundImage: `url(${cafeBackgroundImage})`,
           }}
         >
-          <h1 className="text-5xl mb-2">24/7 café</h1>
+          <h1 className="text-5xl mb-2">1O8 café</h1>
           <h2>café for cool man</h2>
         </section>
 

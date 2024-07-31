@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import cafeBackgroundImage from "../assets/images/wallpaper.jpg";
+import cafeBackgroundImage from "../assets/images/library.jpg";
 import useSWR from "swr";
 import { Book } from "../lib/models";
 import Loading from "../components/loading";
@@ -14,13 +14,13 @@ export default function BooksPage() {
     <>
       <Layout>
         <section
-          className="h-[600px] w-full text-white bg-cover opacity-50 bg-blend-multiply flex flex-col justify-center items-center px-4 text-center"
+          className="h-[600px] w-full text-white bg-cover bg-zinc-400 bg-blend-multiply flex flex-col justify-center items-center px-4 text-center"
           style={{
             backgroundImage: `url(${cafeBackgroundImage})`,
           }}
         >
-          <h1 className="text-5xl mb-2">หนังสือ</h1>
-          <h2>รายการหนังสือทั้งหมด</h2>
+          <h1 className="text-5xl mb-2">ห้องสมุด</h1>
+          <h2>1O8 Library & café</h2>
         </section>
 
         <section className="container mx-auto py-8">
