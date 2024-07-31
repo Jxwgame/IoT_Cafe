@@ -135,15 +135,15 @@ export default function MenuByIdPage() {
                   >
                     <label className="form-control w-full max-w-xs">
                       <div className="label">
-                        <span className="label-text">{menu.title}</span>
+                        <span className="label-text text-xl">{menu.title}</span>
                       </div>
-                      <input
+                      {/* <input
                         type="text"
                         placeholder="Type here"
                         className="input input-bordered w-full max-w-xs"
-                      />
+                      /> */}
                       <div className="label"></div>
-                    </label>
+                    </label><br />
 
                     <label className="form-control w-full max-w-xs">
                       <div className="label">
@@ -156,7 +156,7 @@ export default function MenuByIdPage() {
                         className="input input-bordered w-full max-w-xs"
                       />
                       <div className="label"></div>
-                    </label>
+                    </label><br />
 
                     <label className="form-control w-full max-w-xs">
                       <div className="label">
@@ -173,7 +173,7 @@ export default function MenuByIdPage() {
                   </form>
                   <div className="modal-action">
                     <form method="dialog">
-                      <button className="btn">Close</button>
+                      <Button color="grey" size="xs">Close</Button>
                       <Button type="submit" loading={isProcessing} size="xs">
                         Submit
                       </Button>
