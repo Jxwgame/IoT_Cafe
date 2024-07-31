@@ -57,7 +57,7 @@ export default function MenuByIdPage() {
         message: "สั่งซื้อเรียบร้อยแล้ว",
         color: "teal",
       });
-      navigate(`/orders/${response.data.id}`);
+      navigate(`/menu`);
     } catch (error) {
       if (error instanceof AxiosError) {
         if (error.response?.status === 422) {
