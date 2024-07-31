@@ -44,7 +44,7 @@ export default function MenuByIdPage() {
   const handleSubmit = async (values: typeof orderCreateForm.values) => {
     try {
       setIsProcessing(true);
-      const response = await axios.post<Order>(`/order`, values);
+      const response = await axios.post<Order>(`/orders`, values);
       notifications.show({
         title: "สั่งซื้อสำเร็จ",
         message: "สั่งซื้อเรียบร้อยแล้ว",
@@ -103,19 +103,14 @@ export default function MenuByIdPage() {
                 <img
                   src={menu.image_url}
                   alt={menu.title}
-                  className="w-full object-cover aspect-[4/3]"
+                  className="w-full object-cover aspect-[16/9]"
                 />
                 <div className="col-span-2 px-4 space-y-2 py-4">
                   <h1>{menu.title}</h1>
-                  <p className="indent-4">
-                    {/* TODO: เพิ่มรายละเอียดหนังสือ */}
-                  </p>
+                  <p className="indent-4"></p>
 
                   <h3>ราคาเมนู</h3>
-                  <p className="indent-4">
-                    {/* TODO: เพิ่มเรื่องย่อ */}
-                    {menu.price}฿
-                  </p>
+                  <p className="indent-4 text-2xl">{menu.price}฿</p>
                 </div>
               </div>
 
@@ -143,7 +138,7 @@ export default function MenuByIdPage() {
 
               <dialog id="my_modal_4" className="modal">
                 <div className="modal-box w-11/12 max-w-xl flex flex-col items-center justify-center">
-                  <h3 className="font-bold text-lg mb-4">แบบฟอร์มสั่งซื้อ</h3>
+                  <h3 className="font-bold text-xl mb-4">แบบฟอร์มสั่งซื้อ</h3>
                   <form
                     onSubmit={orderCreateForm.onSubmit(handleSubmit)}
                     className="flex flex-col gap-4 items-center justify-center"
@@ -151,9 +146,7 @@ export default function MenuByIdPage() {
                     <div className="mb-4">
                       <label className="form-control w-full max-w-xs">
                         <div className="label">
-                          <span className="label-text text-xl">
-                            เมนูการสั่งซื้อ
-                          </span>
+                          <span className="label-text">เมนูการสั่งซื้อ</span>
                         </div>
                         <input
                           type="text"

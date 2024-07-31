@@ -41,9 +41,9 @@ export default function orderPage() {
 
           <div className="overflow-x-auto">
             {order?.map((orders) => (
-              <table className="table">
+              <table className="table w-full flex justify-center align-center">
                 <thead>
-                  <tr>
+                  <tr className="text-center">
                     <th>Order ID</th>
                     <th>Menu</th>
                     <th>Count</th>
@@ -51,7 +51,7 @@ export default function orderPage() {
                     <th>Note</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="text-center">
                   <tr>
                     <th>{orders.id}</th>
                     <td>{orders.menu}</td>
