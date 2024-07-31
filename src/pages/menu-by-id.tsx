@@ -1,4 +1,4 @@
-import { Alert, Button, Container, Divider } from "@mantine/core";
+import { Alert, Button, Container, Divider, TextInput } from "@mantine/core";
 import Layout from "../components/layout";
 import { Link, useParams } from "react-router-dom";
 import { Menu } from "../lib/models";
@@ -23,8 +23,9 @@ export default function MenuByIdPage() {
 
   const orderCreateForm = useForm({
     initialValues: {
+      menu: "",
       count: 1,
-      note: "-",
+      note: "",
     },
 
     validate: {
@@ -50,7 +51,7 @@ export default function MenuByIdPage() {
         message: "สั่งซื้อเรียบร้อยแล้ว",
         color: "teal",
       });
-      navigate(`/order/${response.data.id}`);
+      navigate(`/orders/${response.data.id}`);
     } catch (error) {
       if (error instanceof AxiosError) {
         if (error.response?.status === 422) {
@@ -109,8 +110,10 @@ export default function MenuByIdPage() {
                   <h1>{menu.title}</h1>
                   <p className="indent-4"></p>
 
-                  <h3>ราคาเมนู</h3>
-                  <p className="indent-4 text-2xl">{menu.price}฿</p>
+                  <h3>ราคาเมนู </h3>
+                  <span className="indent-4 text-3xl text-red">
+                    {menu.price}฿
+                  </span>
                 </div>
               </div>
 
@@ -148,7 +151,7 @@ export default function MenuByIdPage() {
                         <div className="label">
                           <span className="label-text">เมนูการสั่งซื้อ</span>
                         </div>
-                        <input
+                        <TextInput
                           type="text"
                           placeholder=""
                           className="input input-bordered w-full max-w-xs"
@@ -165,7 +168,7 @@ export default function MenuByIdPage() {
                         <div className="label">
                           <span className="label-text">จำนวน</span>
                         </div>
-                        <input
+                        <TextInput
                           {...orderCreateForm.getInputProps("total")}
                           type="number"
                           placeholder="Type here"
@@ -180,7 +183,7 @@ export default function MenuByIdPage() {
                         <div className="label">
                           <span className="label-text">หมายเหตุ</span>
                         </div>
-                        <input
+                        <TextInput
                           {...orderCreateForm.getInputProps("note")}
                           type="text"
                           placeholder="Type here"
