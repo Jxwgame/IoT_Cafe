@@ -152,14 +152,17 @@ export default function MenuByIdPage() {
                       <label className="form-control w-full max-w-xs">
                         <div className="label">
                           <span className="label-text text-xl">
-                            {menu.title}
+                            เมนูการสั่งซื้อ
                           </span>
                         </div>
-                        {/* <input
-            type="text"
-            placeholder="Type here"
-            className="input input-bordered w-full max-w-xs"
-            /> */}
+                        <input
+                          type="text"
+                          placeholder=""
+                          className="input input-bordered w-full max-w-xs"
+                          {...orderCreateForm.getInputProps("menu")}
+                          value={menu.title}
+                          readOnly
+                        />
                         <div className="label"></div>
                       </label>
                     </div>
@@ -170,7 +173,7 @@ export default function MenuByIdPage() {
                           <span className="label-text">จำนวน</span>
                         </div>
                         <input
-                          {...orderCreateForm.getInputProps("count")}
+                          {...orderCreateForm.getInputProps("total")}
                           type="number"
                           placeholder="Type here"
                           className="input input-bordered w-full max-w-xs"
