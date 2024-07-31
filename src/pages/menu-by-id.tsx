@@ -1,6 +1,6 @@
 import { Alert, Button, Container, Divider } from "@mantine/core";
 import Layout from "../components/layout";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Menu } from "../lib/models";
 import { Order } from "../lib/models";
 import useSWR from "swr";
@@ -14,7 +14,6 @@ import { notifications } from "@mantine/notifications";
 
 export default function MenuByIdPage() {
   const { menuId } = useParams();
-
   const navigate = useNavigate();
   const [isProcessing, setIsProcessing] = useState(false);
 
@@ -30,6 +29,13 @@ export default function MenuByIdPage() {
   });
 
   const { data: menu, isLoading, error } = useSWR<Menu>(`/menu/${menuId}`);
+
+  const handleClick = () => {
+    const modal = document.getElementById("my_modal_4") as HTMLDialogElement;
+    if (modal) {
+      modal.showModal();
+    }
+  };
 
   const handleSubmit = async (values: typeof orderCreateForm.values) => {
     try {
@@ -114,8 +120,7 @@ export default function MenuByIdPage() {
               <Button
                 color="blue"
                 size="xs"
-                component={Link}
-                to={`/`}
+                onClick={handleClick}
                 className="mt-4"
                 leftSection={<IconBasket />}
               >
