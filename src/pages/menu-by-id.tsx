@@ -20,7 +20,7 @@ export default function MenuByIdPage() {
   const orderCreateForm = useForm({
     initialValues: {
       count: 1,
-      note: "",
+      note: "-",
     },
 
     validate: {
@@ -119,7 +119,7 @@ export default function MenuByIdPage() {
 
               <Button
                 color="blue"
-                size="xs"
+                size="xl"
                 onClick={handleClick}
                 className="mt-4"
                 leftSection={<IconBasket />}
