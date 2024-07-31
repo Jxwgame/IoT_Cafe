@@ -127,66 +127,68 @@ export default function MenuByIdPage() {
                 ทำการสั่งซื้อ
               </Button>
               <dialog id="my_modal_4" className="modal">
-                <div className="modal-box w-11/12 max-w-5xl block">
-                  <h3 className="font-bold text-lg">แบบฟอร์มสั่งซื้อ</h3>
-                  <form
-                    onSubmit={orderCreateForm.onSubmit(handleSubmit)}
-                    className="flex justify-center align-center"
-                  >
-                    <div className="mb-4">
-                    <label className="form-control w-full max-w-xs">
-                      <div className="label">
-                        <span className="label-text text-xl">{menu.title}</span>
-                      </div>
-                      {/* <input
-                        type="text"
-                        placeholder="Type here"
-                        className="input input-bordered w-full max-w-xs"
-                        /> */}
-                      <div className="label"></div>
-                    </label>
-                    </div>
+  <div className="modal-box w-11/12 max-w-5xl block">
+    <h3 className="font-bold text-lg">แบบฟอร์มสั่งซื้อ</h3>
+    <form
+      onSubmit={orderCreateForm.onSubmit(handleSubmit)}
+      className="flex flex-col gap-4"
+    >
+      <div className="mb-4">
+        <label className="form-control w-full max-w-xs">
+          <div className="label">
+            <span className="label-text text-xl">{menu.title}</span>
+          </div>
+          {/* <input
+            type="text"
+            placeholder="Type here"
+            className="input input-bordered w-full max-w-xs"
+            /> */}
+          <div className="label"></div>
+        </label>
+      </div>
 
-                    <div className="mb-4">
-                      <label className="form-control w-full max-w-xs">
-                        <div className="label">
-                          <span className="label-text">จำนวน</span>
-                        </div>
-                        <input
-                          {...orderCreateForm.getInputProps("count")}
-                          type="number"
-                          placeholder="Type here"
-                          className="input input-bordered w-full max-w-xs"
-                          />
-                        <div className="label"></div>
-                      </label>
-                      </div>
+      <div className="mb-4">
+        <label className="form-control w-full max-w-xs">
+          <div className="label">
+            <span className="label-text">จำนวน</span>
+          </div>
+          <input
+            {...orderCreateForm.getInputProps("count")}
+            type="number"
+            placeholder="Type here"
+            className="input input-bordered w-full max-w-xs"
+          />
+          <div className="label"></div>
+        </label>
+      </div>
 
-                    <div className="mb-6">
-                      <label className="form-control w-full max-w-xs">
-                        <div className="label">
-                          <span className="label-text">หมายเหตุ</span>
-                        </div>
-                        <input
-                          {...orderCreateForm.getInputProps("note")}
-                          type="text"
-                          placeholder="Type here"
-                          className="input input-bordered w-full max-w-xs"
-                          />
-                        <div className="label"></div>
-                      </label>
-                    </div>
-                  </form>
-                  <div className="modal-action">
-                    <form method="dialog">
-                      <button className="btn btn-xs">Close</button>
-                      <Button type="submit" loading={isProcessing} size="xs">
-                        Submit
-                      </Button>
-                    </form>
-                  </div>
-                </div>
-              </dialog>
+      <div className="mb-6">
+        <label className="form-control w-full max-w-xs">
+          <div className="label">
+            <span className="label-text">หมายเหตุ</span>
+          </div>
+          <input
+            {...orderCreateForm.getInputProps("note")}
+            type="text"
+            placeholder="Type here"
+            className="input input-bordered w-full max-w-xs"
+          />
+          <div className="label"></div>
+        </label>
+      </div>
+
+      <div className="modal-action flex gap-2">
+        <form method="dialog" className="flex-grow">
+          <button className="btn btn-md">Close</button>
+        </form>
+        <Button type="submit" loading={isProcessing} size="xs">
+          Submit
+        </Button>
+      </div>
+    </form>
+  </div>
+</dialog>
+
             </>
           )}
         </Container>
