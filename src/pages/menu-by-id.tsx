@@ -119,7 +119,7 @@ export default function MenuByIdPage() {
 
               <Button
                 color="blue"
-                size="xl"
+                size="md"
                 onClick={handleClick}
                 className="mt-4"
                 leftSection={<IconBasket />}
@@ -133,6 +133,7 @@ export default function MenuByIdPage() {
                     onSubmit={orderCreateForm.onSubmit(handleSubmit)}
                     className="flex justify-center align-center"
                   >
+                    <div className="mb-4">
                     <label className="form-control w-full max-w-xs">
                       <div className="label">
                         <span className="label-text text-xl">{menu.title}</span>
@@ -141,39 +142,44 @@ export default function MenuByIdPage() {
                         type="text"
                         placeholder="Type here"
                         className="input input-bordered w-full max-w-xs"
-                      /> */}
-                      <div className="label"></div>
-                    </label><br />
-
-                    <label className="form-control w-full max-w-xs">
-                      <div className="label">
-                        <span className="label-text">จำนวน</span>
-                      </div>
-                      <input
-                        {...orderCreateForm.getInputProps("count")}
-                        type="number"
-                        placeholder="Type here"
-                        className="input input-bordered w-full max-w-xs"
-                      />
-                      <div className="label"></div>
-                    </label><br />
-
-                    <label className="form-control w-full max-w-xs">
-                      <div className="label">
-                        <span className="label-text">หมายเหตุ</span>
-                      </div>
-                      <input
-                        {...orderCreateForm.getInputProps("note")}
-                        type="text"
-                        placeholder="Type here"
-                        className="input input-bordered w-full max-w-xs"
-                      />
+                        /> */}
                       <div className="label"></div>
                     </label>
+                    </div>
+
+                    <div className="mb-4">
+                      <label className="form-control w-full max-w-xs">
+                        <div className="label">
+                          <span className="label-text">จำนวน</span>
+                        </div>
+                        <input
+                          {...orderCreateForm.getInputProps("count")}
+                          type="number"
+                          placeholder="Type here"
+                          className="input input-bordered w-full max-w-xs"
+                          />
+                        <div className="label"></div>
+                      </label>
+                      </div>
+
+                    <div className="mb-6">
+                      <label className="form-control w-full max-w-xs">
+                        <div className="label">
+                          <span className="label-text">หมายเหตุ</span>
+                        </div>
+                        <input
+                          {...orderCreateForm.getInputProps("note")}
+                          type="text"
+                          placeholder="Type here"
+                          className="input input-bordered w-full max-w-xs"
+                          />
+                        <div className="label"></div>
+                      </label>
+                    </div>
                   </form>
                   <div className="modal-action">
                     <form method="dialog">
-                      <Button color="grey" size="xs">Close</Button>
+                      <button className="btn btn-xs">Close</button>
                       <Button type="submit" loading={isProcessing} size="xs">
                         Submit
                       </Button>
