@@ -42,7 +42,7 @@ export default function OrderPage() {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="table w-full">
+            <table className="table w-full table-zebra">
               <thead>
                 <tr className="text-center">
                   <th>Order ID</th>
