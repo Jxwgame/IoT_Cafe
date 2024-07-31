@@ -22,12 +22,14 @@ export default function MenuCreatePage() {
   const menuCreateForm = useForm({
     initialValues: {
       title: "",
-      price: 0,
+      price: 1,
+      image_url: "",
     },
 
     validate: {
       title: isNotEmpty("กรุณาระบุชื่อเมนู"),
       price: isNotEmpty("กรุณาระบุราคาของเมนู"),
+      image_url: isNotEmpty("กรุณาใส่รูปภาพ"),
     },
   });
 
@@ -102,7 +104,7 @@ export default function MenuCreatePage() {
             <Textarea
               label="URL_Image"
               placeholder="url_image"
-              {...menuCreateForm.getInputProps("image")}
+              {...menuCreateForm.getInputProps("image_url")}
             />
 
             <Divider />
