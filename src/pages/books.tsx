@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import cafeBackgroundImage from "../assets/images/bg-cafe-2.jpg";
+import cafeBackgroundImage from "../assets/images/wallpaper.jpg";
 import useSWR from "swr";
 import { Book } from "../lib/models";
 import Loading from "../components/loading";
@@ -14,7 +14,7 @@ export default function BooksPage() {
     <>
       <Layout>
         <section
-          className="h-[800px] w-full text-white bg-cover bg-blend-multiply flex flex-col justify-center items-center px-4 text-center"
+          className="h-[600px] w-full text-white bg-cover opacity-50 bg-blend-multiply flex flex-col justify-center items-center px-4 text-center"
           style={{
             backgroundImage: `url(${cafeBackgroundImage})`,
           }}
