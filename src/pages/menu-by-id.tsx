@@ -131,7 +131,7 @@ export default function MenuByIdPage() {
                 size="md"
                 component={Link}
                 to={`/menu/${menu.id}/edit`}
-                className="mt-4 mx-4"
+                className="mt-4 mx-4 mb-8"
                 leftSection={<IconEdit />}
               >
                 แก้ไขเมนู
@@ -140,7 +140,7 @@ export default function MenuByIdPage() {
                 color="blue"
                 size="md"
                 onClick={handleClick}
-                className="mt-4"
+                className="mt-4 mb-8"
                 leftSection={<IconBasket />}
               >
                 ทำการสั่งซื้อ
