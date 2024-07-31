@@ -1,18 +1,17 @@
 import Layout from "../components/layout";
-import cafeBackgroundImage from "../assets/images/bg-cafe-1.jpg";
-import memeImage from "../assets/images/meme.jpg";
+import cafeBackgroundImage from "../assets/images/bg-cafe-01.webp";
 import coffeeImage from "../assets/images/coffee-1.jpg";
 
 export default function HomePage() {
   return (
     <Layout>
       <section
-        className="h-[500px] w-full text-white bg-orange-800 bg-cover bg-blend-multiply flex flex-col justify-center items-center px-4 text-center"
+        className="h-[700px] w-full text-white bg-cover bg-blend-multiply flex flex-col justify-center items-center px-4 text-center"
         style={{
           backgroundImage: `url(${cafeBackgroundImage})`,
         }}
       >
-        <h1 className="text-5xl mb-2">ยินดีต้อนรับสู่ IoT Library & Cafe</h1>
+        <h1 className="text-5xl mb-2">ยินดีต้อนรับสู่ 24/7 Library & Cafe</h1>
         <h2>ร้านกาแฟที่มีหนังสืออยู่นิดหน่อยให้คุณได้อ่าน</h2>
       </section>
 
@@ -28,7 +27,7 @@ export default function HomePage() {
           </p>
 
           <div>
-            <img src={memeImage} alt="Panwit Tuwanut" className="h-full w-full object-cover" />
+            <img src="https://24.media.tumblr.com/94c32ebe934087f0ccc8a2e7d926ddb8/tumblr_mkdnixo2fA1s9zd94o1_500.gif" alt="Panwit Tuwanut" className="h-full w-full object-cover" />
           </div>
         </div>
         <p className="text-right mt-8">

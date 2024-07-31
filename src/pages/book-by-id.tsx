@@ -14,7 +14,7 @@ export default function BookByIdPage() {
   return (
     <>
       <Layout>
-        <Container className="mt-4">
+        <Container className="mt-4 mb-8">
           {/* You can use isLoading instead of !book */}
           {isLoading && !error && <Loading />}
           {error && (

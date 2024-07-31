@@ -121,8 +121,9 @@ export default function BookCreatePage() {
             <Textarea
               label="รายละเอียดหนังสือ"
               placeholder="รายละเอียด"
-              className="h-48"
+              className=""
               {...bookCreateForm.getInputProps("description")}
+              rows={6}
             />
             {/* TODO: เพิ่มเรื่องย่อ */}
             <TextInput

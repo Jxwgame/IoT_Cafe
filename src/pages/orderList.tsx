@@ -1,14 +1,27 @@
 import Layout from "../components/layout";
-import cafeBackgroundImage from "../assets/images/bg-cafe-1.jpg";
+import cafeBackgroundImage from "../assets/images/wallpaper.jpg";
 import useSWR from "swr";
-import { Order } from "../lib/models";
+import { Order, Menu } from "../lib/models";
 import Loading from "../components/loading";
 import { Alert } from "@mantine/core";
 import { IconAlertTriangleFilled } from "@tabler/icons-react";
-// import { Link } from "react-router-dom";
 
-export default function orderPage() {
-  const { data: order, error } = useSWR<Order[]>("/orders");
+export default function OrderPage() {
+  const { data: orders, error: ordersError } = useSWR<Order[]>("/orders");
+  const { data: menus, error: menusError } = useSWR<Menu[]>("/menu");
+
+  // Handle loading states
+  if (!orders || !menus) return <Loading />;
+  if (ordersError || menusError)
+    return (
+      <Alert
+        color="red"
+        title="เกิดข้อผิดพลาดในการอ่านข้อมูล"
+        icon={<IconAlertTriangleFilled />}
+      >
+        {ordersError?.message || menusError?.message}
+      </Alert>
+    );
 
   return (
     <>
@@ -28,40 +41,36 @@ export default function orderPage() {
             <h1>รายการคำสั่งซื้อ</h1>
           </div>
 
-          {!order && !error && <Loading />}
-          {error && (
-            <Alert
-              color="red"
-              title="เกิดข้อผิดพลาดในการอ่านข้อมูล"
-              icon={<IconAlertTriangleFilled />}
-            >
-              {error.message}
-            </Alert>
-          )}
-
           <div className="overflow-x-auto">
-            {order?.map((orders) => (
-              <table className="table w-full flex justify-center align-center">
-                <thead>
-                  <tr className="text-center">
-                    <th>Order ID</th>
-                    <th>Menu</th>
-                    <th>Count</th>
-                    <th>Total Price</th>
-                    <th>Note</th>
-                  </tr>
-                </thead>
-                <tbody className="text-center">
-                  <tr>
-                    <th>{orders.id}</th>
-                    <td>{orders.menu}</td>
-                    <td>{orders.total}</td>
-                    <td>{orders.total}</td>
-                    <td>{orders.note}</td>
-                  </tr>
-                </tbody>
-              </table>
-            ))}
+            <table className="table w-full">
+              <thead>
+                <tr className="text-center">
+                  <th>Order ID</th>
+                  <th>Menu</th>
+                  <th>Count</th>
+                  <th>Total Price</th>
+                  <th>Note</th>
+                </tr>
+              </thead>
+              <tbody className="text-center">
+                {orders.map((order) => {
+                  // Find the menu associated with the order
+                  const menu = menus.find((menu) => menu.title === order.menu);
+                  const price = menu ? menu.price : 0;
+                  const totalPrice = order.total * price;
+
+                  return (
+                    <tr key={order.id}>
+                      <td>{order.id}</td>
+                      <td>{order.menu}</td>
+                      <td>{order.total}</td>
+                      <td>{totalPrice}฿</td>
+                      <td>{order.note}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </div>
         </section>
       </Layout>
