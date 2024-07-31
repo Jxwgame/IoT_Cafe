@@ -12,7 +12,7 @@ import {
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
 import { isNotEmpty, useForm } from "@mantine/form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios, { AxiosError } from "axios";
 import { notifications } from "@mantine/notifications";
 
@@ -34,6 +34,12 @@ export default function MenuByIdPage() {
   });
 
   const { data: menu, isLoading, error } = useSWR<Menu>(`/menu/${menuId}`);
+
+  useEffect(() => {
+    if (menu) {
+      orderCreateForm.setFieldValue("menu", menu.title);
+    }
+  }, [menu, orderCreateForm]);
 
   const handleClick = () => {
     const modal = document.getElementById("my_modal_4") as HTMLDialogElement;
