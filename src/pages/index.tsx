@@ -1,6 +1,5 @@
 import Layout from "../components/layout";
 import cafeBackgroundImage from "../assets/images/wallpaper_index.jpg";
-import coffeeImage from "../assets/images/coffee-1.jpg";
 
 export default function HomePage() {
   return (
@@ -40,7 +39,7 @@ export default function HomePage() {
           <div>
             <img src="https://24.media.tumblr.com/94c32ebe934087f0ccc8a2e7d926ddb8/tumblr_mkdnixo2fA1s9zd94o1_500.gif" alt="Panwit Tuwanut" className="h-full w-full object-cover" />
           </div>
-          
+
           <p className="text-right col-span-2">
             IoT Library & Cafe เป็นร้านกาแฟที่มีหนังสืออยู่นิดหน่อยให้คุณได้อ่าน
             และเรียนรู้เรื่องใหม่ๆ ที่เกี่ยวกับเทคโนโลยี IoT โดยคาเฟ่ของเรานั้น ก่อตั้งขึ้นโดย
