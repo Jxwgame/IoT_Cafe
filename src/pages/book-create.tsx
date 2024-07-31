@@ -29,6 +29,7 @@ export default function BookCreatePage() {
       abbre_title: "",
       category: [] as string[],
       is_published: false,
+      image_url: "https://placehold.co/150x200"
     },
 
     validate: {

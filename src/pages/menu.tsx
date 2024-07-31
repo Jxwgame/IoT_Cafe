@@ -57,7 +57,7 @@ export default function menuPage() {
                 key={menus.id}
               >
                 <img
-                  src="https://placehold.co/150x200"
+                  src={menus.image_url}
                   alt={menus.title}
                   className="w-full object-cover aspect-[3/4]"
                 />

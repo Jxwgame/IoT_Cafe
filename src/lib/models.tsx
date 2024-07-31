@@ -7,15 +7,17 @@ export interface Book {
   abbre_title: string;
   category: string[];
   is_published: boolean;
+  image_url: string;
 }
 export interface Menu {
   id: number;
-  title: string; // 
+  title: string; //
   price: number;
+  image_url: string;
 }
 export interface Order {
   id: number;
-  name: string; // 
+  name: string; //
   price: number;
   detail: string;
   count: number;

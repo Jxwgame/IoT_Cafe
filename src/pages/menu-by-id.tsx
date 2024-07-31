@@ -97,7 +97,7 @@ export default function MenuByIdPage() {
               {/* <p className="italic text-neutral-500 mb-4">โดย {menu.author}</p> */}
               <div className="grid grid-cols-1 lg:grid-cols-3">
                 <img
-                  src="https://placehold.co/150x200"
+                  src={menu.image_url}
                   alt={menu.title}
                   className="w-full object-cover aspect-[3/4]"
                 />
@@ -127,68 +127,69 @@ export default function MenuByIdPage() {
                 ทำการสั่งซื้อ
               </Button>
               <dialog id="my_modal_4" className="modal">
-  <div className="modal-box w-11/12 max-w-5xl flex flex-col items-center justify-center">
-    <h3 className="font-bold text-lg mb-4">แบบฟอร์มสั่งซื้อ</h3>
-    <form
-      onSubmit={orderCreateForm.onSubmit(handleSubmit)}
-      className="flex flex-col gap-4 items-center justify-center"
-    >
-      <div className="mb-4">
-        <label className="form-control w-full max-w-xs">
-          <div className="label">
-            <span className="label-text text-xl">{menu.title}</span>
-          </div>
-          {/* <input
+                <div className="modal-box w-11/12 max-w-5xl flex flex-col items-center justify-center">
+                  <h3 className="font-bold text-lg mb-4">แบบฟอร์มสั่งซื้อ</h3>
+                  <form
+                    onSubmit={orderCreateForm.onSubmit(handleSubmit)}
+                    className="flex flex-col gap-4 items-center justify-center"
+                  >
+                    <div className="mb-4">
+                      <label className="form-control w-full max-w-xs">
+                        <div className="label">
+                          <span className="label-text text-xl">
+                            {menu.title}
+                          </span>
+                        </div>
+                        {/* <input
             type="text"
             placeholder="Type here"
             className="input input-bordered w-full max-w-xs"
             /> */}
-          <div className="label"></div>
-        </label>
-      </div>
+                        <div className="label"></div>
+                      </label>
+                    </div>
 
-      <div className="mb-4">
-        <label className="form-control w-full max-w-xs">
-          <div className="label">
-            <span className="label-text">จำนวน</span>
-          </div>
-          <input
-            {...orderCreateForm.getInputProps("count")}
-            type="number"
-            placeholder="Type here"
-            className="input input-bordered w-full max-w-xs"
-          />
-          <div className="label"></div>
-        </label>
-      </div>
+                    <div className="mb-4">
+                      <label className="form-control w-full max-w-xs">
+                        <div className="label">
+                          <span className="label-text">จำนวน</span>
+                        </div>
+                        <input
+                          {...orderCreateForm.getInputProps("count")}
+                          type="number"
+                          placeholder="Type here"
+                          className="input input-bordered w-full max-w-xs"
+                        />
+                        <div className="label"></div>
+                      </label>
+                    </div>
 
-      <div className="mb-6">
-        <label className="form-control w-full max-w-xs">
-          <div className="label">
-            <span className="label-text">หมายเหตุ</span>
-          </div>
-          <input
-            {...orderCreateForm.getInputProps("note")}
-            type="text"
-            placeholder="Type here"
-            className="input input-bordered w-full max-w-xs"
-          />
-          <div className="label"></div>
-        </label>
-      </div>
+                    <div className="mb-6">
+                      <label className="form-control w-full max-w-xs">
+                        <div className="label">
+                          <span className="label-text">หมายเหตุ</span>
+                        </div>
+                        <input
+                          {...orderCreateForm.getInputProps("note")}
+                          type="text"
+                          placeholder="Type here"
+                          className="input input-bordered w-full max-w-xs"
+                        />
+                        <div className="label"></div>
+                      </label>
+                    </div>
 
-      <div className="modal-action flex gap-2">
-        <form method="dialog" className="flex-grow">
-          <button className="btn btn-md">Close</button>
-        </form>
-        <Button type="submit" loading={isProcessing} size="xs">
-          Submit
-        </Button>
-      </div>
-    </form>
-  </div>
-</dialog>
-
+                    <div className="modal-action flex gap-2">
+                      <form method="dialog" className="flex-grow">
+                        <button className="btn btn-md">Close</button>
+                      </form>
+                      <Button type="submit" loading={isProcessing} size="xs">
+                        Submit
+                      </Button>
+                    </div>
+                  </form>
+                </div>
+              </dialog>
             </>
           )}
         </Container>

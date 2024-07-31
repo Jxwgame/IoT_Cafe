@@ -37,6 +37,7 @@ export default function BookEditById() {
       abbre_title: "",
       category: [] as string[],
       is_published: false,
+      image_url: "https://placehold.co/150x200",
     },
 
     validate: {
@@ -238,7 +239,7 @@ export default function BookEditById() {
                 <TextInput
                   label="ปกหนังสือ"
                   placeholder="URL_Image_Address"
-                  {...bookEditForm.getInputProps("url_image")}
+                  {...bookEditForm.getInputProps("image_url")}
                 />
 
                 <Checkbox
