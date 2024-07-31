@@ -8,7 +8,7 @@ import { IconAlertTriangleFilled } from "@tabler/icons-react";
 // import { Link } from "react-router-dom";
 
 export default function orderPage() {
-  const { data: order, error } = useSWR<Order[]>("/order");
+  const { data: order, error } = useSWR<Order[]>("/orders");
 
   return (
     <>
@@ -54,9 +54,9 @@ export default function orderPage() {
                 <tbody>
                   <tr>
                     <th>{orders.id}</th>
-                    <td>{orders.name}</td>
-                    <td>{orders.count}</td>
-                    <td>{orders.price}</td>
+                    <td>{orders.menu}</td>
+                    <td>{orders.total}</td>
+                    <td>{orders.total}</td>
                     <td>{orders.note}</td>
                   </tr>
                 </tbody>

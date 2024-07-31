@@ -17,10 +17,7 @@ export interface Menu {
 }
 export interface Order {
   id: number;
-  name: string; //
-  price: number;
-  detail: string;
-  count: number;
+  menu: string;
+  total: number; // จำนวนสินค้า
   note: string;
-  is_published: boolean;
 }

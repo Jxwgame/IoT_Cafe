@@ -1,11 +1,15 @@
 import { Alert, Button, Container, Divider } from "@mantine/core";
 import Layout from "../components/layout";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Menu } from "../lib/models";
 import { Order } from "../lib/models";
 import useSWR from "swr";
 import Loading from "../components/loading";
-import { IconAlertTriangleFilled, IconBasket } from "@tabler/icons-react";
+import {
+  IconAlertTriangleFilled,
+  IconBasket,
+  IconEdit,
+} from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
 import { isNotEmpty, useForm } from "@mantine/form";
 import { useState } from "react";
@@ -118,6 +122,17 @@ export default function MenuByIdPage() {
               <Divider className="mt-4" />
 
               <Button
+                color="grey"
+                size="xs"
+                component={Link}
+                to={`/menu/${menu.id}/edit`}
+                className="mt-4"
+                leftSection={<IconEdit />}
+              >
+                แก้ไขข้อมูลหนังสือ
+              </Button>
+
+              <Button
                 color="blue"
                 size="md"
                 onClick={handleClick}
@@ -126,6 +141,7 @@ export default function MenuByIdPage() {
               >
                 ทำการสั่งซื้อ
               </Button>
+
               <dialog id="my_modal_4" className="modal">
                 <div className="modal-box w-11/12 max-w-5xl flex flex-col items-center justify-center">
                   <h3 className="font-bold text-lg mb-4">แบบฟอร์มสั่งซื้อ</h3>
@@ -181,7 +197,7 @@ export default function MenuByIdPage() {
 
                     <div className="modal-action flex gap-2">
                       <form method="dialog" className="flex-grow">
-                        <button className="btn btn-md">Close</button>
+                        <button className="btn btn-sm">Close</button>
                       </form>
                       <Button type="submit" loading={isProcessing} size="xs">
                         Submit
