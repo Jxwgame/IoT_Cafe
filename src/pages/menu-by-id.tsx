@@ -133,6 +133,16 @@ export default function MenuByIdPage() {
               </Button>
 
               <Button
+                color="orange"
+                size="md"
+                component={Link}
+                to={`/menu/${menu.id}/edit`}
+                className="mt-4 mx-4"
+                leftSection={<IconEdit />}
+              >
+                แก้ไขเมนู
+              </Button>
+              <Button
                 color="blue"
                 size="md"
                 onClick={handleClick}

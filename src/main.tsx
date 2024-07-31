@@ -63,6 +63,10 @@ const router = createBrowserRouter([
     element: <MenuEditById />,
   },
   {
+    path: "/menu/:menuId/edit",
+    element: <MenuEditById />,
+  },
+  {
     path: "/orders",
     element: <OrderList />,
   },
