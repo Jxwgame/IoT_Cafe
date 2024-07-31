@@ -52,19 +52,29 @@ export default function BooksPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {books?.map((book) => (
-              <div className="border border-solid border-neutral-200" key={book.id}>
+              <div
+                className="border border-solid border-neutral-200"
+                key={book.id}
+              >
                 <img
                   src={book.image_url}
                   alt={book.title}
                   className="w-full object-cover aspect-[3/4]"
                 />
                 <div className="p-4">
-                  <h2 className="text-lg font-semibold line-clamp-2">{book.title}</h2>
+                  <h2 className="text-lg font-semibold line-clamp-2">
+                    {book.title}
+                  </h2>
                   <p className="text-xs text-neutral-500">โดย {book.author}</p>
                 </div>
 
                 <div className="flex justify-end px-4 pb-2">
-                  <Button component={Link} to={`/books/${book.id}`} size="xs" variant="default">
+                  <Button
+                    component={Link}
+                    to={`/books/${book.id}`}
+                    size="xs"
+                    variant="default"
+                  >
                     ดูรายละเอียด
                   </Button>
                 </div>

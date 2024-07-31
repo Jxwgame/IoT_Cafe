@@ -29,7 +29,7 @@ export default function BookCreatePage() {
       abbre_title: "",
       category: [] as string[],
       is_published: false,
-      image_url: "https://placehold.co/150x200"
+      image_url: "https://placehold.co/150x200",
     },
 
     validate: {
@@ -95,7 +95,7 @@ export default function BookCreatePage() {
 
           <form
             onSubmit={bookCreateForm.onSubmit(handleSubmit)}
-            className="space-y-8"
+            className="space-y-8 mb-6"
           >
             <TextInput
               label="ชื่อหนังสือ"
@@ -121,6 +121,7 @@ export default function BookCreatePage() {
             <Textarea
               label="รายละเอียดหนังสือ"
               placeholder="รายละเอียด"
+              className="h-24"
               {...bookCreateForm.getInputProps("description")}
             />
             {/* TODO: เพิ่มเรื่องย่อ */}
@@ -145,7 +146,7 @@ export default function BookCreatePage() {
             <TextInput
               label="ปกหนังสือ"
               placeholder="URL_Image_Address"
-              {...bookCreateForm.getInputProps("url_image")}
+              {...bookCreateForm.getInputProps("image_url")}
             />
 
             <Checkbox
