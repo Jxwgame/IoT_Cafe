@@ -127,11 +127,11 @@ export default function MenuByIdPage() {
                 ทำการสั่งซื้อ
               </Button>
               <dialog id="my_modal_4" className="modal">
-  <div className="modal-box w-11/12 max-w-5xl block">
-    <h3 className="font-bold text-lg">แบบฟอร์มสั่งซื้อ</h3>
+  <div className="modal-box w-11/12 max-w-5xl flex flex-col items-center justify-center">
+    <h3 className="font-bold text-lg mb-4">แบบฟอร์มสั่งซื้อ</h3>
     <form
       onSubmit={orderCreateForm.onSubmit(handleSubmit)}
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-4 items-center justify-center"
     >
       <div className="mb-4">
         <label className="form-control w-full max-w-xs">
