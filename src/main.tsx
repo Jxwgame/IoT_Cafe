@@ -17,6 +17,7 @@ import BookCreatePage from "./pages/book-create";
 import MenuPage from "./pages/menu";
 import MenuCreatePage from "./pages/menu-create";
 import MenuByIdPage from "./pages/menu-by-id";
+import MenuEditById from "./pages/menu-edit-by-id";
 import OrderList from "./pages/orderList";
 
 const theme = createTheme({
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
   {
     path: "/books/:bookId/edit",
     element: <BookEditById />,
+  },
+  {
+    path: "/menu/:menuId/edit",
+    element: <MenuEditById />,
   },
   {
     path: "/order",
